@@ -1,0 +1,47 @@
+name: vortex_market
+description: "A new Flutter project for VORTEX MARKET."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # --- إدارة الحالة (State Management) ---
+  bloc: ^9.1.0
+  flutter_bloc: ^9.1.1
+
+  # --- التصميم والاستجابة (UI & Responsiveness) ---
+  sizer: ^2.0.15           # لجعل الخطوط والأبعاد متناسبة مع كل الشاشات
+  flutter_svg: ^2.0.9      # لدعم أيقونات SVG
+  google_fonts: ^6.1.0     # للخطوط الاحترافية
+  cached_network_image: ^3.3.1 # لعرض صور المنتجات من الإنترنت بسرعة
+
+  # --- الربط والبيانات (Data & Networking) ---
+  dio: ^5.4.0              # للتعامل مع الـ API
+  shared_preferences: ^2.2.2 # لحفظ جلسة تسجيل الدخول (Session)
+  connectivity_plus: ^6.1.4 # لفحص وجود إنترنت
+
+  # --- إضافات أخرى ---
+  fluttertoast: ^8.2.4
+  fl_chart: ^0.65.0
+  password_strength_checker: ^1.2.4
+  url_launcher: ^6.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  # --- إضافة الصور هنا (Assets) ---
+  assets:
+    - lib/assets/images/         # هذا سيشمل صورة الخلفية وأي صور أخرى تضعها في هذا المجلد
+    # - assets/icons/          # (اختياري) إذا كان لديك أيقونات خاصة
