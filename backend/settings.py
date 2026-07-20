@@ -24,7 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'corsheaders',  # مكتبة الـ CORS
+    'corsheaders',  
     'admin_api',
 ]
 
@@ -40,7 +40,7 @@ MIDDLEWARE = [
 ]
 
 # إعدادات CORS الحاسمة
-CORS_ALLOW_ALL_ORIGINS = True # للسماح لـ React بالاتصال بدون قيود أثناء التطوير
+CORS_ALLOW_ALL_ORIGINS = True 
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'backend.urls'
