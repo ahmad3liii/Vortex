@@ -405,7 +405,7 @@ context.read<ChatCubit>().sendMessage(chatId, "Hello!");
 | الاسم | الدور |
 |-------|-------|
 | **أحمد زيان علي** | مطور Flutter (Full Stack) |
-| **مضر علي عبدهللا** | مطور Backend (Django) |
+| **مضر علي عبدلله** | مطور Backend (Django) |
 | **جوى جعفر عبد الهادي** | مصمم واجهات (UI/UX) |
 
 **المشرف:** د. باسل حبيب حسن
