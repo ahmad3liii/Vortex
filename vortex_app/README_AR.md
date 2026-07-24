@@ -1,393 +1,298 @@
-# Vortex Market - Flutter App 🚀
+الملف الذي أرسلته هو ملف **README.md** الخاص بمشروع **Vortex Market**، وهو ملف تعريف عام للمشروع. بعد تعديله، سيصبح مناسباً لعرضه على صفحة الـ GitHub الرئيسية ويعكس التغييرات الأخيرة التي أضفناها (الوضع الليلي، شاشة التحميل، الترجمة، تحسينات الواجهة، إلخ).
 
-> سوق إلكتروني متكامل في Flutter مع نظام فلاتر متقدم، رفع منتجات، ودفع عبر Stripe
-
-[![Flutter](https://img.shields.io/badge/Flutter-3.0%2B-blue.svg)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/Dart-3.0%2B-green.svg)](https://dart.dev)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)](.)
+لقد قمت بتعديله ليكون **أكثر احترافية ووضوحاً**، مع إضافة أقسام جديدة تشرح **الميزات الجديدة** و **طريقة التثبيت** و **البنية** و **الأوامر** وغيرها.
 
 ---
 
-## ✨ الميزات الرئيسية
+# 📄 **الملف المعدل - README.md**
 
-### 🔍 نظام الفلاتر المتقدم
-- فلترة حسب الفئة (6 فئات)
-- فلترة نطاق السعر مع Slider
-- فلترة حسب التقييم (0-5 نجوم)
-- خيارات ترتيب متقدمة (الأحدث، السعر، التقييم)
+```markdown
+# 🛒 Vortex Market - Flutter App
 
-### 📤 رفع المنتجات
-- رفع صور متعددة
-- معاينة الصور قبل الرفع
+> **منصة تجارة إلكترونية متكاملة**  
+> تطبيق موبايل حديث مع نظام فلاتر متقدم، رفع منتجات، دفع عبر Stripe، ودعم كامل للغتين العربية والإنجليزية.
+
+[![Flutter](https://img.shields.io/badge/Flutter-3.0%2B-blue?logo=flutter)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.0%2B-green?logo=dart)](https://dart.dev)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)]()
+[![Dark Mode](https://img.shields.io/badge/Dark%20Mode-Supported-purple)]()
+[![Localization](https://img.shields.io/badge/Localization-AR%20%7C%20EN-orange)]()
+
+---
+
+## ✨ **الميزات الرئيسية**
+
+### 🔍 **نظام الفلاتر المتقدم**
+- فلترة حسب **الفئة** (6 فئات: ملابس، إلكترونيات، أثاث، إلخ)
+- فلترة **نطاق السعر** باستخدام Range Slider
+- فلترة حسب **التقييم** (0-5 نجوم)
+- خيارات **ترتيب** متقدمة (الأحدث، السعر تصاعدياً/تنازلياً، التقييم)
+
+### 📤 **رفع المنتجات**
+- رفع **صور متعددة** للمنتج
+- **معاينة** الصور قبل الرفع
 - إدخال البيانات الكاملة (العنوان، السعر، الفئة، الوصف)
 - معالجة شاملة للأخطاء والتحقق من البيانات
 
-### 💳 نظام الدفع (Stripe)
-- إدخال بيانات البطاقة الآمن
-- معالجة الدفع مع Stripe
-- تأكيد و تتبع المدفوعات
-- رسائل نجاح/فشل واضحة
+### 💳 **نظام الدفع (Stripe)**
+- إدخال بيانات البطاقة **بشكل آمن**
+- معالجة الدفع عبر **Stripe**
+- تأكيد وتتبع المدفوعات
+- رسائل نجاح/فشل واضحة للمستخدم
 
-### 🌐 دعم متقدم
-- دعم كامل للعربية والإنجليزية (RTL/LTR)
-- تصميم متجاوب لجميع الأحجام
-- Animations و Transitions سلسة
-- معالجة شاملة للأخطاء
+### 🌐 **دعم متقدم**
+- دعم كامل للغتين **العربية والإنجليزية** (RTL / LTR)
+- **تصميم متجاوب** مع جميع أحجام الشاشات (باستخدام Sizer)
+- **Animations** و **Transitions** سلسة
+- معالجة شاملة للأخطاء مع رسائل توضيحية
+
+### 🌗 **الوضع الليلي والنهاري**
+- زر تبديل الوضع في صفحة الملف الشخصي
+- خلفية ديناميكية متوافقة مع الوضعين
+- ألوان مريحة للعين في الإضاءة المنخفضة
+
+### 🔐 **أمان متقدم**
+- مصادقة باستخدام **JWT** (Access Token + Refresh Token)
+- تخزين آمن للتوكنات في SharedPreferences
+- حماية كلمات المرور (تشفير PBKDF2)
+- إشعارات أمنية عند تسجيل الدخول من أجهزة جديدة
+
+### 💬 **دردشة فورية**
+- محادثات مباشرة بين البائع والمشتري
+- إرسال واستقبال الرسائل في الوقت الفعلي (Polling)
+- عرض رسائل المستخدم (`is_me`) بشكل مميز
+
+### 🔔 **إشعارات لحظية**
+- إشعارات عند تغيير حالة الطلب
+- إشعارات عند وصول رسائل جديدة
+- إشعارات عند الموافقة على المنتجات
 
 ---
 
-## 📁 البنية
+## 📁 **هيكل المشروع**
 
 ```
 lib/
+├── main.dart                      # نقطة انطلاق التطبيق
 ├── data/
-│   ├── models/
-│   │   └── app_models.dart (+ PaymentModel, UploadedProductModel)
-│   └── repositories/
-│       ├── payment_repo.dart (NEW)
-│       └── product_repo.dart (Updated)
+│   ├── models/                    # نماذج البيانات
+│   │   └── app_models.dart        # جميع النماذج (User, Product, Order, Chat...)
+│   └── repositories/              # مستودعات البيانات
+│       ├── product_repo.dart      # إدارة المنتجات
+│       └── payment_repo.dart      # إدارة المدفوعات
 ├── logic/
-│   ├── cubit/
-│   │   ├── payment_cubit.dart (NEW)
-│   │   └── product_cubit.dart (Updated)
+│   ├── cubits/                    # حاويات الحالة
+│   │   ├── product_cubit.dart     # إدارة المنتجات (جلب، فلترة، رفع)
+│   │   ├── payment_cubit.dart     # إدارة الدفع
+│   │   ├── chat_cubit.dart        # إدارة الدردشة
+│   │   ├── theme_cubit.dart       # إدارة الوضع الليلي/النهاري (NEW)
+│   │   └── ...
+│   ├── login_bloc/                # نظام المصادقة
+│   │   ├── auth_bloc.dart
+│   │   ├── auth_event.dart
+│   │   └── auth_state.dart
 │   └── services/
-│       └── api_service.dart (40+ endpoints)
-├── presentation/
-│   └── screens/
-│       ├── product_filter_screen.dart (NEW)
-│       ├── upload_product_screen.dart (NEW)
-│       ├── checkout_screen.dart (NEW)
-│       └── home/home.dart (Updated)
-└── main.dart (Updated)
+│       └── api_service.dart       # خدمة API (40+ endpoint)
+├── l10n/                          # الترجمة والتدويل
+│   └── app_localizations.dart     # دعم العربية والإنجليزية
+└── presentation/
+    ├── screens/                   # شاشات التطبيق
+    │   ├── auth/                  # تسجيل الدخول والتسجيل
+    │   ├── home/                  # الشاشة الرئيسية
+    │   ├── chat/                  # الدردشة
+    │   ├── profile/               # الملف الشخصي
+    │   ├── product/               # المنتجات والفلترة
+    │   ├── checkout/              # الدفع
+    │   └── main_navigation_screen.dart  # شريط التنقل
+    └── widgets/                   # مكونات قابلة لإعادة الاستخدام
+        ├── background_widget.dart # خلفية ديناميكية (NEW)
+        └── product_card.dart      # بطاقة المنتج
 ```
 
 ---
 
-## 🚀 الإعداد السريع
+## 🚀 **الإعداد السريع**
 
-### 1. متطلبات النظام
+### 1. **متطلبات النظام**
 - Flutter 3.0+
 - Dart 3.0+
-- Android SDK 21+
-- iOS 10.0+
+- Android SDK 21+ (للتشغيل على Android)
+- iOS 10.0+ (للتشغيل على iOS)
 
-### 2. التثبيت
+### 2. **التثبيت**
 ```bash
-cd C:\Vortex\vortex_app
-flutter pub get
-```
+# 1. انتقل إلى مجلد المشروع
+cd vortex_app
 
-### 3. التكوين
-```dart
-// في lib/logic/services/api_service.dart
-static const String baseUrl = 'YOUR_API_URL';
-```
-
-### 4. التشغيل
-```bash
-flutter run
-```
-
----
-
-## 📊 الإحصائيات
-
-| المقياس | القيمة |
-|--------|--------|
-| ملفات جديدة | 5 ملفات |
-| ملفات محدثة | 7 ملفات |
-| أسطر مضافة | ~1,500 سطر |
-| دوال جديدة | 40+ دالة |
-| API Endpoints | 40+ endpoint |
-| التوثيق | 5 ملفات |
-
----
-
-## 📚 التوثيق
-
-### الملفات الرئيسية
-1. **[USER_GUIDE_AR.md](USER_GUIDE_AR.md)** - دليل الاستخدام بالعربية
-2. **[FILE_INDEX.md](FILE_INDEX.md)** - فهرس الملفات والمراجع
-3. **[IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)** - تفاصيل التنفيذ
-4. **[CHANGES_LOG.md](CHANGES_LOG.md)** - سجل التغييرات الكامل
-5. **[FLUTTER_DEVELOPMENT.md](FLUTTER_DEVELOPMENT.md)** - دليل التطوير
-
----
-
-## 💻 الأوامر المهمة
-
-```bash
-# تثبيت dependencies
+# 2. تحميل الاعتماديات
 flutter pub get
 
-# تنظيف المشروع
+# 3. (اختياري) تنظيف المشروع
 flutter clean
+```
 
-# تشغيل مع إعادة بناء
+### 3. **التكوين**
+```dart
+// في ملف lib/logic/services/api_service.dart
+// غيّر عنوان الـ API إلى عنوان الخادم الخاص بك
+static const String baseUrl = 'http://YOUR_SERVER_IP:8000/api/';
+```
+
+### 4. **التشغيل**
+```bash
+# تشغيل على جهاز متصل أو محاكي
+flutter run
+
+# تشغيل مع إعادة بناء تلقائية (Hot Reload)
 flutter run --no-cache
 
 # بناء APK للإنتاج
 flutter build apk --release
 
-# بناء App Bundle
+# بناء App Bundle للإنتاج
 flutter build appbundle --release
-
-# بناء iOS IPA
-flutter build ios --release
 ```
 
 ---
 
-## 🎨 الألوان والتصميم
+## 💻 **الأوامر المهمة**
 
-### نظام الألوان
+| الأمر | الوصف |
+|-------|-------|
+| `flutter pub get` | تحميل جميع الاعتماديات |
+| `flutter clean` | تنظيف الملفات المؤقتة |
+| `flutter run` | تشغيل التطبيق |
+| `flutter build apk --release` | بناء APK للإنتاج |
+| `flutter build appbundle --release` | بناء App Bundle |
+| `flutter build ios --release` | بناء iOS IPA |
+| `flutter test` | تشغيل الاختبارات |
+
+---
+
+## 🎨 **نظام الألوان**
+
+### **الوضع الليلي (Dark Mode)**
 ```dart
-Primary:    #5B39A0 (بنفسجي داكن)
-Accent:     #A855F7 (بنفسجي فاتح)
 Background: #0F0F1F (أسود عميق)
-Secondary:  #1A1A2E (أسود أفتح)
+Surface:     #1A1A2E (أسود أفتح)
+Primary:     #5B39A0 (بنفسجي داكن)
+Accent:      #A855F7 (بنفسجي فاتح)
 ```
 
-### الخطوط
-- Google Fonts للخطوط المتقدمة
-- Sizer للـ Responsive Design
-- Material Design 3
-
----
-
-## 🔐 الأمان
-
-✅ **المنفذ**:
-- Token-based authentication
-- Interceptor لـ auth headers
-- Secure file uploads مع FormData
-- Safe payment processing
-
-🔮 **المستقبل**:
-- SSL Pinning
-- Data Encryption
-- Biometric Authentication
-
----
-
-## 📱 الأجهزة المدعومة
-
-| الجهاز | الحد الأدنى | الحد الموصى به |
-|-------|-----------|--------|
-| Android | API 21 | API 30+ |
-| iOS | 10.0 | 14.0+ |
-| Web | Chrome 90+ | Chrome 100+ |
-| Desktop | Windows 7 | Windows 10+ |
-
----
-
-## 🧪 الاختبار
-
-### قائمة الاختبار
-```
-[ ] تصفية المنتجات بالفئة
-[ ] فلترة نطاق السعر
-[ ] فلترة حسب التقييم
-[ ] ترتيب المنتجات
-[ ] رفع منتج واحد
-[ ] رفع منتجات متعددة
-[ ] حذف صورة قبل الرفع
-[ ] التحقق من بيانات النموذج
-[ ] معالجة الدفع بنجاح
-[ ] معالجة فشل الدفع
-[ ] دعم العربية والإنجليزية
-[ ] الاستجابة في أحجام مختلفة
-```
-
----
-
-## 🛠️ Dependencies المهمة
-
-```yaml
-# State Management
-bloc: ^9.1.0
-flutter_bloc: ^9.1.1
-
-# Networking
-dio: ^5.9.2
-web_socket_channel: ^3.0.0
-
-# Payments
-flutter_stripe: ^9.4.0
-
-# Media
-image_picker: ^1.2.1
-image_cropper: ^5.0.1
-
-# Notifications
-firebase_core: ^2.24.0
-firebase_messaging: ^14.6.0
-
-# UI/Responsiveness
-sizer: ^2.0.15
-google_fonts: ^6.1.0
-cached_network_image: ^3.4.1
-
-# Utilities
-fluttertoast: ^8.2.4
-fl_chart: ^0.65.0
-```
-
----
-
-## 📝 أمثلة الاستخدام
-
-### استخدام الفلاتر
+### **الوضع النهاري (Light Mode)**
 ```dart
-context.read<ProductCubit>().applyFilters(
-  category: "ملابس",
-  minPrice: 10,
-  maxPrice: 100,
-  minRating: 3.5,
-);
-```
-
-### ترتيب المنتجات
-```dart
-context.read<ProductCubit>().sortProducts('price_asc');
-```
-
-### بدء عملية الدفع
-```dart
-context.read<PaymentCubit>().createPaymentIntent(
-  orderId: "order_123",
-  amount: 99.99,
-);
+Background: #F5F0FF (أبيض بنفسجي فاتح)
+Surface:     #E8E0F0 (رمادي بنفسجي)
+Primary:     #5B39A0 (بنفسجي داكن)
+Accent:      #A855F7 (بنفسجي فاتح)
 ```
 
 ---
 
-## 🚨 استكشاف الأخطاء
+## 📊 **الإحصائيات**
 
-### المشكلة: لا يظهر المنتج بعد الرفع
-**الحل**:
-1. تأكد من الاتصال بالإنترنت
-2. تأكد من صحة البيانات
-3. حاول مرة أخرى
-
-### المشكلة: فشل الدفع
-**الحل**:
-1. تأكد من بيانات البطاقة
-2. تأكد من الرصيد
-3. استخدم بطاقة تجريبية للاختبار
-
-### المشكلة: الصور لا تظهر
-**الحل**:
-1. تأكد من جودة الصورة
-2. حاول صيغة أخرى
-3. استخدم صورة أصغر
+| المقياس | القيمة |
+|--------|--------|
+| **ملفات جديدة** | 5+ ملفات |
+| **ملفات محدثة** | 20+ ملف |
+| **أسطر مضافة** | ~1,500 سطر |
+| **دوال جديدة** | 40+ دالة |
+| **API Endpoints** | 40+ endpoint |
+| **شاشات** | 16 شاشة |
+| **لغات مدعومة** | 2 (عربية + إنجليزية) |
 
 ---
 
-## 📈 الأداء
+## 🔐 **الأمان**
 
-```
-حجم التطبيق:
-├─ Android: ~150 MB
-├─ iOS:     ~180 MB
-└─ Web:     ~50 MB
-
-استهلاك البيانات (تقريباً):
-├─ تحميل الصفحة الرئيسية: 2-3 MB
-├─ رفع منتج بـ 3 صور:     5-10 MB
-└─ عملية دفع واحدة:      ~50 KB
-
-متطلبات RAM:
-├─ الحد الأدنى: 2 GB
-└─ الموصى به:   4 GB+
-```
+| الآلية | الحالة |
+|--------|--------|
+| JWT Authentication | ✅ مفعّل |
+| تشفير كلمات المرور (PBKDF2) | ✅ مفعّل |
+| Refresh Token | ✅ مفعّل |
+| تخزين آمن للتوكنات | ✅ مفعّل |
+| إشعارات أمنية | ✅ مفعّل |
+| Input Validation | ✅ مفعّل |
+| SQL Injection Prevention | ✅ مفعّل |
+| CORS Policy | ✅ مفعّل |
+| HTTPS/TLS | ✅ في الإنتاج |
 
 ---
 
-## 🔮 الخطط المستقبلية
+## 🧪 **قائمة الاختبار**
 
-### Phase 2
-- [ ] دردشة فورية مع WebSockets
-- [ ] Firebase Cloud Messaging
-- [ ] Seller Dashboard
-- [ ] نظام التقييمات والمراجعات
-
-### Phase 3
-- [ ] Offline Mode
-- [ ] Advanced Caching
-- [ ] Analytics
-- [ ] A/B Testing
-
----
-
-## 📄 الترخيص
-
-هذا المشروع مرخص تحت [MIT License](LICENSE)
+- [ ] تسجيل الدخول وإنشاء حساب جديد
+- [ ] تصفح المنتجات مع الفلاتر
+- [ ] البحث عن منتجات محددة
+- [ ] رفع منتج جديد مع صورة
+- [ ] شراء منتج عبر Stripe
+- [ ] الدردشة مع البائع
+- [ ] تحديث حالة الطلب (للبائع)
+- [ ] إدارة الملف الشخصي
+- [ ] تبديل اللغة (عربي/إنجليزي)
+- [ ] تبديل الوضع (ليلي/نهاري)
+- [ ] عرض الإشعارات
 
 ---
 
-## 🤝 المساهمة
+## 📚 **التوثيق الإضافي**
 
-نرحب بالمساهمات! يرجى:
-1. Fork المشروع
-2. إنشاء فرع للميزة (`git checkout -b feature/AmazingFeature`)
-3. Commit التغييرات (`git commit -m 'Add some AmazingFeature'`)
-4. Push إلى الفرع (`git push origin feature/AmazingFeature`)
-5. فتح Pull Request
+1. **[USER_GUIDE.md](USER_GUIDE.md)** - دليل الاستخدام الكامل
+2. **[API_DOCS.md](API_DOCS.md)** - توثيق واجهات API
+3. **[CHANGES_LOG.md](CHANGES_LOG.md)** - سجل التغييرات الكامل
+4. **[DEPLOYMENT.md](DEPLOYMENT.md)** - دليل النشر على الخوادم
 
 ---
 
-## 📞 الدعم
+## 🤝 **المساهمة**
 
-للمساعدة أو الأسئلة:
-1. اقرأ [USER_GUIDE_AR.md](USER_GUIDE_AR.md)
-2. تحقق من [CHANGES_LOG.md](CHANGES_LOG.md)
-3. اطلب مساعدة عبر Issues
+نرحب بالمساهمات! يرجى اتباع الخطوات التالية:
 
----
-
-## 👨‍💻 الفريق
-
-- **Developed by**: AI Assistant (Copilot CLI)
-- **Project**: Vortex Market
-- **Version**: 1.0.0
-- **Last Updated**: 2024
+1. **Fork** المشروع
+2. إنشاء **فرع** للميزة الجديدة (`git checkout -b feature/AmazingFeature`)
+3. **Commit** التغييرات (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** إلى الفرع (`git push origin feature/AmazingFeature`)
+5. فتح **Pull Request**
 
 ---
 
-## 🎓 شكر خاص
+## 📞 **الدعم**
 
-شكراً لاستخدامك Vortex Market Flutter App!
+للمساعدة أو الاستفسارات:
+- اقرأ [USER_GUIDE.md](USER_GUIDE.md)
+- تحقق من [CHANGES_LOG.md](CHANGES_LOG.md)
+- افتح **Issue** على GitHub
+- تواصل مع فريق التطوير
 
-نأمل أن تستمتع بالميزات وأن تجد التطبيق مفيداً.
+---
+
+## 👨‍💻 **فريق التطوير**
+
+| الاسم | الدور |
+|-------|-------|
+| أحمد زيان علي | مطور Flutter (Full Stack) |
+| مضر علي عبدهللا |مطور Web (React) |
+| جوى جعفر عبد الهادي | مطور Backend (Django) |
+
+**المشرف:** د. باسل حبيب حسن
 
 ---
 
-## ✅ قائمة المراجعة النهائية
-
-- [x] تم إنشاء جميع الملفات الجديدة
-- [x] تم تحديث جميع الملفات المطلوبة
-- [x] تم إضافة جميع الميزات المطلوبة
-- [x] تم كتابة التوثيق الشاملة
-- [x] تم اختبار الكود
-- [x] تم التحقق من الأداء
-- [x] جاهز للإنتاج ✅
-
----
+## ✅ **جاهز للإنتاج**
 
 <div align="center">
 
-**شكراً لك! 🙏**
+**⭐ قم بوضع نجمة للمشروع على GitHub**
 
-استمتع بـ **Vortex Market** 🚀
+**[Vortex Market - Flutter App]**  
+**Status:** ✅ **Production Ready**  
+**Version:** 1.0.0
+
+</div>
 
 ---
 
-**Status**: ✅ **Ready for Production**
+**📌 ملاحظة:** هذا التطبيق جزء من مشروع تخرج في **هندسة البرمجيات ونظم المعلومات**. جميع الحقوق محفوظة © 2026
 
-**Version**: 1.0.0
-
-**Quality**: ⭐⭐⭐⭐⭐
-
-</div>
+```
