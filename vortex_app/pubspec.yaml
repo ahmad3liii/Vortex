@@ -10,6 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2 
   cupertino_icons: ^1.0.8
 
   # --- إدارة الحالة (State Management) ---
@@ -17,22 +20,36 @@ dependencies:
   flutter_bloc: ^9.1.1
 
   # --- التصميم والاستجابة (UI & Responsiveness) ---
-  sizer: ^2.0.15           # لجعل الخطوط والأبعاد متناسبة مع كل الشاشات
-  flutter_svg: ^2.0.9      # لدعم أيقونات SVG
-  google_fonts: ^6.1.0     # للخطوط الاحترافية
-  cached_network_image: ^3.3.1 # لعرض صور المنتجات من الإنترنت بسرعة
+  sizer: ^2.0.15
+  flutter_svg: ^2.0.9
+  google_fonts: ^6.1.0
+  cached_network_image: ^3.4.1
 
   # --- الربط والبيانات (Data & Networking) ---
-  dio: ^5.4.0              # للتعامل مع الـ API
-  shared_preferences: ^2.2.2 # لحفظ جلسة تسجيل الدخول (Session)
-  connectivity_plus: ^6.1.4 # لفحص وجود إنترنت
+  dio: ^5.9.2
+  shared_preferences: ^2.5.5
+  connectivity_plus: ^6.1.4
+  web_socket_channel: ^3.0.0
+
+  # --- الدفع (Payment) ---
+  flutter_stripe: ^11.0.0
+
+  # --- الصور والوسائط (Images & Media) ---
+  image_picker: ^1.2.1
+  image_cropper: ^8.0.0
+
+  # --- الإشعارات (Notifications) ---
+  firebase_core: ^3.8.0
+  firebase_messaging: ^15.1.0
 
   # --- إضافات أخرى ---
   fluttertoast: ^8.2.4
   fl_chart: ^0.65.0
   password_strength_checker: ^1.2.4
   url_launcher: ^6.3.2
-
+  flutter_staggered_animations: ^1.1.1
+  flutter_rating_bar: ^4.0.1
+       
 dev_dependencies:
   flutter_test:
     sdk: flutter

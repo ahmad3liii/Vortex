@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vortex_market/logic/login_bloc/auth_bloc/auth_bloc.dart';
 import 'package:vortex_market/logic/login_bloc/auth_bloc/auth_event.dart';
 import 'package:vortex_market/logic/login_bloc/auth_bloc/auth_state.dart';
+import 'package:vortex_market/presentation/screens/main_navigation_screen.dart';
 import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -65,9 +66,17 @@ class _LoginScreenState extends State<LoginScreen>
             BlocConsumer<AuthBloc, AuthState>(
               listener: (context, state) {
                 if (state.isSuccess) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Welcome to Vortex!')),
-                  );
+                  // ✅ تأخير بسيط ثم الانتقال إلى MainNavigationScreen
+                  Future.delayed(const Duration(milliseconds: 300), () {
+                    if (context.mounted) {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => MainNavigationScreen(),
+                        ),
+                      );
+                    }
+                  });
                 }
                 if (state.errorMessage != null) {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -91,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen>
                             children: [
                               _buildHeaderSection(),
                               const SizedBox(height: 40),
-                              _buildGlassCard(state),
+                              _buildGlassCard(context, state),
                             ],
                           ),
                         ),
@@ -108,23 +117,11 @@ class _LoginScreenState extends State<LoginScreen>
   }
 
   Widget _buildHeaderSection() {
-    return Column(
+    return const Column(
       children: [
-        TweenAnimationBuilder<double>(
-          tween: Tween(begin: 1.0, end: 1.1),
-          duration: const Duration(seconds: 2),
-          curve: Curves.easeInOut,
-          builder: (context, scale, child) =>
-              Transform.scale(scale: scale, child: child),
-          onEnd: () {},
-          child: const Icon(
-            Icons.shopping_cart_rounded,
-            size: 80,
-            color: Colors.white,
-          ),
-        ),
-        const SizedBox(height: 10),
-        const Text(
+        Icon(Icons.shopping_cart_rounded, size: 80, color: Colors.white),
+        SizedBox(height: 10),
+        Text(
           'VORTEX MARKET',
           style: TextStyle(
             fontSize: 28,
@@ -137,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  Widget _buildGlassCard(AuthState state) {
+  Widget _buildGlassCard(BuildContext context, AuthState state) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(25),
       child: BackdropFilter(
@@ -175,9 +172,9 @@ class _LoginScreenState extends State<LoginScreen>
                 ),
               ),
               const SizedBox(height: 30),
-              _buildAnimatedButton(state),
+              _buildAnimatedButton(context, state),
               const SizedBox(height: 20),
-              _buildSignUpOption(),
+              _buildSignUpOption(context),
             ],
           ),
         ),
@@ -185,10 +182,12 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  Widget _buildAnimatedButton(AuthState state) {
+  Widget _buildAnimatedButton(BuildContext context, AuthState state) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
-      width: state.isLoading ? 60 : double.infinity,
+      width: state.isLoading
+          ? 60
+          : MediaQuery.of(context).size.width * 0.8, // ✅ استخدم قيمة محدودة
       height: 55,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -199,13 +198,16 @@ class _LoginScreenState extends State<LoginScreen>
         ),
         onPressed: state.isLoading
             ? null
-            : () => context.read<AuthBloc>().add(
-                LoginSubmitted(emailController.text, passwordController.text),
-              ),
+            : () {
+                FocusScope.of(context).unfocus();
+                context.read<AuthBloc>().add(
+                  LoginSubmitted(emailController.text, passwordController.text),
+                );
+              },
         child: state.isLoading
             ? const SizedBox(
-                width: 20,
-                height: 20,
+                width: 24,
+                height: 24,
                 child: CircularProgressIndicator(
                   color: Colors.white,
                   strokeWidth: 2,
@@ -222,32 +224,32 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  Widget _buildSignUpOption() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text(
-          "Don't have an account? ",
-          style: TextStyle(color: Colors.white70),
-        ),
-        GestureDetector(
-          onTap: () async {
-            await Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => RegisterScreen()),
-            );
-            _contentController.reset();
-            _contentController.forward();
-          },
-          child: const Text(
+  Widget _buildSignUpOption(BuildContext context) {
+    return GestureDetector(
+      onTap: () async {
+        await Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => RegisterScreen()),
+        );
+        _contentController.reset();
+        _contentController.forward();
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            "Don't have an account? ",
+            style: TextStyle(color: Colors.white70),
+          ),
+          const Text(
             "Sign Up",
             style: TextStyle(
               color: Colors.purpleAccent,
               fontWeight: FontWeight.bold,
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
