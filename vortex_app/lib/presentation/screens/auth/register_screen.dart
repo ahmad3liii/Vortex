@@ -9,6 +9,8 @@ class RegisterScreen extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController locationController = TextEditingController();
 
   RegisterScreen({super.key});
 
@@ -18,13 +20,13 @@ class RegisterScreen extends StatelessWidget {
       body: Stack(
         children: [
           _buildBackground(),
-
           BlocConsumer<AuthBloc, AuthState>(
             listener: (context, state) {
               if (state.isRegisterSuccess) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     content: Text("Account Created Successfully!"),
+                    backgroundColor: Colors.green,
                   ),
                 );
                 Navigator.pop(context);
@@ -46,9 +48,7 @@ class RegisterScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         _buildAnimatedHeader(),
-
                         const SizedBox(height: 30),
-
                         _buildAnimatedGlassContainer(
                           child: Column(
                             children: [
@@ -62,6 +62,19 @@ class RegisterScreen extends StatelessWidget {
                                 controller: emailController,
                                 hint: "Email",
                                 icon: Icons.email_outlined,
+                              ),
+                              const SizedBox(height: 15),
+                              _buildTextField(
+                                controller: phoneController,
+                                hint: "Phone Number",
+                                icon: Icons.phone_android_outlined,
+                              ),
+                              const SizedBox(height: 15),
+                              // ✅ حقل الموقع الجديد
+                              _buildTextField(
+                                controller: locationController,
+                                hint: "Current Location",
+                                icon: Icons.location_on_outlined,
                               ),
                               const SizedBox(height: 15),
                               _buildTextField(
@@ -83,9 +96,7 @@ class RegisterScreen extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(height: 25),
-
                               _buildAnimatedMainButton(context, state),
-
                               const SizedBox(height: 15),
                               _buildLoginOption(context),
                             ],
@@ -106,6 +117,7 @@ class RegisterScreen extends StatelessWidget {
   Widget _buildBackground() {
     return Container(
       decoration: const BoxDecoration(
+        color: Color(0xFF0F0C29),
         image: DecorationImage(
           image: AssetImage('lib/assets/images/background.png'),
           fit: BoxFit.cover,
@@ -115,44 +127,42 @@ class RegisterScreen extends StatelessWidget {
   }
 
   Widget _buildAnimatedHeader() {
-    return Column(
-      children: [
-        TweenAnimationBuilder(
-          duration: const Duration(seconds: 2),
-          tween: Tween<double>(begin: 1.0, end: 1.08),
-          curve: Curves.easeInOut,
-          builder: (context, double scale, child) {
-            return Transform.scale(scale: scale, child: child);
-          },
-          child: const Icon(
-            Icons.shopping_cart_rounded,
-            size: 60,
-            color: Colors.white,
+    return TweenAnimationBuilder(
+      duration: const Duration(milliseconds: 800),
+      tween: Tween<double>(begin: 0, end: 1),
+      builder: (context, double value, child) {
+        return Opacity(
+          opacity: value,
+          child: Transform.scale(scale: 0.8 + (0.2 * value), child: child),
+        );
+      },
+      child: const Column(
+        children: [
+          Icon(Icons.shopping_cart_rounded, size: 60, color: Colors.white),
+          SizedBox(height: 10),
+          Text(
+            'Join VORTEX',
+            style: TextStyle(
+              fontSize: 28,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1.5,
+            ),
           ),
-        ),
-        const SizedBox(height: 10),
-        const Text(
-          'Join VORTEX',
-          style: TextStyle(
-            fontSize: 28,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.5,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
   Widget _buildAnimatedGlassContainer({required Widget child}) {
     return TweenAnimationBuilder(
-      duration: const Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 1000),
       tween: Tween<double>(begin: 0, end: 1),
       builder: (context, double value, child) {
         return Opacity(
           opacity: value,
           child: Transform.translate(
-            offset: Offset(0, 30 * (1 - value)),
+            offset: Offset(0, 50 * (1 - value)),
             child: child,
           ),
         );
@@ -178,7 +188,7 @@ class RegisterScreen extends StatelessWidget {
   Widget _buildAnimatedMainButton(BuildContext context, AuthState state) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
-      width: state.isLoading ? 60 : MediaQuery.of(context).size.width,
+      width: state.isLoading ? 60 : double.infinity,
       height: 55,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -189,15 +199,15 @@ class RegisterScreen extends StatelessWidget {
         ),
         onPressed: state.isLoading
             ? null
-            : () {
-                context.read<AuthBloc>().add(
-                  RegisterSubmitted(
-                    name: nameController.text,
-                    email: emailController.text,
-                    password: passwordController.text,
-                  ),
-                );
-              },
+            : () => context.read<AuthBloc>().add(
+                RegisterSubmitted(
+                  name: nameController.text.trim(),
+                  email: emailController.text.trim(),
+                  password: passwordController.text,
+                  phone: phoneController.text.trim(),
+                  location: locationController.text.trim(),
+                ),
+              ),
         child: state.isLoading
             ? const SizedBox(
                 width: 24,
